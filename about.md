@@ -3,9 +3,9 @@ layout: page
 title: 关于我
 ---
 
-一个 Android/Java 开发者，喜欢研究一些新技术。
+一名在读大学生，也是一个自学 Android 的菜鸡。
 <p>
-平时喜欢整理个人博客，逛逛技术论坛。
+通过写博客、记录笔记等，和大家一起分享Android的学习。
 <p>
-了解一些 前端 基本概念和简单用法。
+但知行好事，莫要问前程。
 {% include comments.html %}

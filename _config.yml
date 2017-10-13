@@ -1,12 +1,12 @@
 # Basic
-title: 背书包的小屁孩儿
+title: 哈库纳玛塔塔
 subtitle: 个人站
 description: 欢迎来到我的个人站~
 # 头像里面的标题
-avatarTitle: baby
+avatarTitle: Shanks
 # 头像里面的描述
 avatarDesc: android / java
-url: "http://xiaopihaier.github.io"
+url: "http://shanks07.github.io"
 
 # Comment
 comment:
@@ -16,14 +16,14 @@ comment:
 # Social
 social:
     # weibo:
-    github: xiaopihaier
+    github: shanks
     # twitter:
-    mail: bzdqsml.1@gmail.com
+    mail: qiyu007@foxmail.com
 
 # 百度统计
 # 使用博客模板请去掉或者更换 id
 baidu:
-    id: 5a73dd1f48c5a3d493dc3d1328534f73
+    id: 4ea76823067ce09394ff8ea9745710fa
 
 # 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
 

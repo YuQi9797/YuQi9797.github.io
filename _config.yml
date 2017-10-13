@@ -1,0 +1,54 @@
+# Basic
+title: 背书包的小屁孩儿
+subtitle: 个人站
+description: 欢迎来到我的个人站~
+# 头像里面的标题
+avatarTitle: baby
+# 头像里面的描述
+avatarDesc: android / java
+url: "http://xiaopihaier.github.io"
+
+# Comment
+comment:
+    disqus: leopard
+    # uyan: 2143225  # 有言id,登录有言官网申请
+
+# Social
+social:
+    # weibo:
+    github: xiaopihaier
+    # twitter:
+    mail: bzdqsml.1@gmail.com
+
+# 百度统计
+# 使用博客模板请去掉或者更换 id
+baidu:
+    id: 5a73dd1f48c5a3d493dc3d1328534f73
+
+# 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
+
+
+permalink: /:year/:month/:title/
+# Format
+highlighter: rouge
+
+textColor: #FF0000
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: clear
+
+# The blog button should not be removed.
+blog_button:
+    title: 博客主页
+
+# Navigation buttons in the front page.s
+nav:
+    - {title: 所有文章, description: archive, url: '/archive'}
+    - {title: 标签, description: tags, url: '/tags'}
+    - {title: 关于我, description: about, url: '/about'}
+
+
+# Pagination
+gems: [jekyll-paginate,jekyll-sitemap]
+paginate: 20
+paginate_path: "page/:num/"

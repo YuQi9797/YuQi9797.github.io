@@ -74,5 +74,5 @@ int main()
 ```
 至此，冒泡排序就介绍完了，让我们来看看结果吧。ヾ(。￣□￣)ﾂ゜゜゜
 <div>
-  <img src="/images/image/BubbleSort.png" width="281" height="173"/>
+  <img src="/images/image/BubbleSort.png" width="562" height="346"/>
 </div>

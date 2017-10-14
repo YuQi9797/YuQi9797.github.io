@@ -14,7 +14,7 @@ tag: C #这是分类标签
 
 第1趟：7 5 4 3 6 2 9 8 10 1.
 
-第2趟: 7 5 4 6 3 9 8 10 2 1.
+第2趟：7 5 4 6 3 9 8 10 2 1.
 
 第3趟：7 5 6 4 9 8 10 3 2 1.
 
@@ -74,5 +74,5 @@ int main()
 ```
 至此，冒泡排序就介绍完了，让我们来看看结果吧。ヾ(。￣□￣)ﾂ゜゜゜
 <div>
-  <img src="/images/image/BubbleSort.png"/>
+  <img src="/images/image/BubbleSort.png"/ width="281" height="173"/>
 </div>

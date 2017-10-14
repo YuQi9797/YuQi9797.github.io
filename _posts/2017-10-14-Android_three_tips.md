@@ -6,9 +6,9 @@ description: "知晓当前是在哪一个活动、随时随地地退出程序、
 tag: C #这是分类标签
 ---
 
-  今天所记录的，是我在《第一行代码 Android》中看见的，感觉十分有用，在此想分享给大家。(～￣▽￣)～
+今天所记录的，是我在《第一行代码 Android》中看见的，感觉十分有用，在此想分享给大家。(～￣▽￣)～
 
-  1.知晓当前是哪一个活动：
+1.知晓当前是哪一个活动：
 
   根据程序当前的界面判断出这是哪一个活动。有人肯定会问，为什么这个很有用呢？原因很简单，当你真正进入到企业之后，你很可能会接手一份儿别人写的代码
 ，而读别人的代码是很痛苦的一件事情，如果你想修改某个界面上的东西，会花很多时间去找该界面对应的活动是哪一个。而学会这个技巧后，这对你来说就都不是什么难事儿了ヾ(*´▽‘*)ﾉ
@@ -28,7 +28,7 @@ public class BaseActivity extends AppCompatActivity{
 
   写完之后，每当你进入到一个活动的界面，该活动的类名就会被打印出来，这样就能知晓当前界面所对应的是哪一个活动了!(～￣▽￣)～ 惊不惊喜？意不意外？先别着急，这BaseActivity我们还要接着往里加东西呢！我们紧接着来看看第二个小技能。
 
-  2.随时随地地退出程序:
+2.随时随地地退出程序:
 
   当我们使用Intent进行页面跳转的时候，比如从1->2->3,当我们要退出程序时则需要连按3次Back键，十分不方便。此时我们的程序就十分需要一个注销或者退出的功能。
 
@@ -67,5 +67,21 @@ public class ActivityCollector{
   从此之后，不管你想在什么地方退出程序，只需要在所需要的活动中调用ActivityCollector.finishAll()方法，就可以直接退出程序了。 岂不美滋滋！ヾ(ﾟ∀ﾟゞ)
 为了保证程序完全退出，也可以在销毁所有活动的代码后加入:android.os.Process.killProcess(android.os.Process.myPid());用于杀掉当前进程。其中，killProcess()方法用于杀掉一个进程，它接受一个进程id参数，我们通过myPid()方法来获取当前程序的进程id。注意：killProcess()方法只能用于杀掉当前程序的进程。
 
-  3.启动活动的最佳写法：
-  在项目开发中，你会经常遇到对接的问题。比如一个活动(Activity)不是由你开发的，但现在你负责的部分需要有启动该Activiy这个功能，而启动这个活动需要传入哪些数据我们却不清楚。为了不去询问负责编写该Activity的人员，为了不用阅读该Activity中的代码，我们就需要写一个启动活动的最佳写法。
+3.启动活动的最佳写法：
+
+  在项目开发中，你会经常遇到对接的问题。比如一个活动(SecActivity)不是由你开发的，但现在你负责的部分需要有启动该Activiy这个功能，而启动这个活动需要传递哪些数据我们却不清楚。为了将该Activity所需要的数据全部体现出来，为了不去询问负责编写该Activity的人员，为了不用阅读该Activity中的代码，我们就需要写一个启动活动的最佳写法。
+
+  首先，在SecActivity中添加一个actionStart()方法,代码如下：
+  ```
+  public static void actionStart(Context context,String data1,String data2){
+    Intent intent = new Intent(context,SecActivity.class);
+    intent.putExtra("param1",data1);
+    intent.putExtra("param2",data2);
+    context.startActivity(intent);
+  }
+  ```
+  通过actionStart()方法，我们完成了Intent的构建，另外所有SecActivity中需要的数据都是通过actionStart()方法的参数传递过来的，然后存储到Intent中，最后调用startActivity()方法启动SecActivity，并且在启动SecActivity时，只需要一行代码即可（从firActivity跳到SecActivity）：
+  ```
+  SecActivity.actionStart(firActivity.this,"data1","data2");
+  ```
+至此，Android的三个小技能就介绍完毕拉，希望对你有帮助哟! (～￣▽￣)～...

@@ -11,5 +11,5 @@ Android开发团队在Android 6.0系统中引用了运行时权限这个功能�
 
 当然并不是所有的权限需要在运行时申请，而需要运行时申请权限的仅有危险权限而已，那危险权限有些什么呢？ヾ(。￣□￣)ﾂ゜゜゜ 往下看!!!
 <div>
-  <img src = "/images/image/permissionList.png"
+  <img src = "/images/image/permissionList.png" />
 </div>

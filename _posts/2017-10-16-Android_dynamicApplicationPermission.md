@@ -12,7 +12,7 @@ Android开发团队在Android 6.0系统中引用了运行时权限这个功能�
 
 这里列出了Android中所有的危险权限，一共是9组24个权限。
 <div align="left">
-  <img src = "/images/image/permissionList.png" />
+  <img src = "/images/image/permissionList.png" width="270" height="480"/>
 </div>
 每当要使用一个权限时，可以先到这张表中查一查，如果是属于这张表中的权限，那么就需要进行运行时权限处理。说了那么多，接下来我们就来学习一下如果在程序运行时申请权限。
 本次我们使用CALL_PHONE这个权限，来实现拨打电话功能。
@@ -41,7 +41,7 @@ Android开发团队在Android 6.0系统中引用了运行时权限这个功能�
 ```
 效果如下：
 <div>
-  <img src="/images/image/activity_main.png" />
+  <img src="/images/image/activity_main.png" width="270" height="480"/>
 </div>
 接下来我们修改MainActivity中的代码，为button注册监听事件，代码如下：
 ```
@@ -186,9 +186,9 @@ public class MainActivity extends AppCompatActivity {
   <img src="/images/image/dialog2.png" />
 </div>
 <div>
-  <img src="/images/image/setting.png" />
+  <img src="/images/image/setting.png" width="270" height="480"/>
 </div>
 我们在showSettingDialog()中，使用Intent跳转到应用设置界面，并在onActivityResult()中进行判断，看权限是否授权，并执行相应的操作。至此我们的功能就已经实现拉！ヾ(×× ) ﾂ
 <div>
-  <img src="/images/image/accept.png" />
+  <img src="/images/image/accept.png" width="270" height="480"/>
 </div>

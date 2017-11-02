@@ -133,4 +133,4 @@ public class MainActivity extends AppCompatActivity {
   <img src="/images/image/HttpURLConnection.png" width="231" height="372"/>
 </div>
 
-代码地址：<a href="https://github.com/Shanks07/androidSources/tree/master/Network">
+代码地址：[This link](https://github.com/Shanks07/androidSources/tree/master/Network) inline link.

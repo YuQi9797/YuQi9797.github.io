@@ -193,4 +193,4 @@ public class MainActivity extends AppCompatActivity {
   <img src="/images/image/accept.png" width="270" height="480"/>
 </div>
 
-代码地址：https://github.com/Shanks07/androidSources/tree/master/PermissionTest
+代码地址：[点击这里ヾ(･ω･`｡)](https://github.com/Shanks07/androidSources/tree/master/PermissionTest)

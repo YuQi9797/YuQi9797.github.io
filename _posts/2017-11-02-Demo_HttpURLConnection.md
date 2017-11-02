@@ -128,6 +128,10 @@ public class MainActivity extends AppCompatActivity {
 
 ★★★ Android不允许在子线程中进行UI操作，所以我们需要通过runOnUiThread()方法将线程切换到主线程，然后再更新UI元素。
 
+☆☆☆在运行程序之前，别忘了声明一下网络权限
+```
+<uses-permission android:name = "android.permission.INTERNET"/>
+```
 附上效果图：
 <div>
   <img src="/images/image/HttpURLConnection.png" width="231" height="372"/>

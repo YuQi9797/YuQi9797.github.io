@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Demo_HttpURLConnection"
+title: "HttpURLConnection(Demo)"
 date: 2017-11-02 11:00
 description: "Android中使用HTTP协议访问网络"
 tag: Android

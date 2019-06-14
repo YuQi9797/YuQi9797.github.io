@@ -61,8 +61,25 @@ print(json.loads(json_str, object_hook=dict2student))
 import json
 
 obj = dict(name='小明', age=20)
-s = json.dumps(obj, ensure_ascii=True)
+s = json.dumps(obj, ensure_ascii=False)  # 输出真正的中文需要指定ensure_ascii=False
+print(s)
+
+结果：{"name": "小明", "age": 20}
+```
+对于参数ensure_ascii解释：
+
+If ensure_ascii is false, then the return value can contain non-ASCII characters if they appear in strings contained in obj. Otherwise, all such characters are escaped in JSON strings.
+
+如果无任何配置，或者说使用默认配置，
+输出的会是‘小明’的ASCII字符码，而不是真正的中文。
+这是因为json.dumps 序列化时对中文默认使用的ascii编码。
+```
+import json
+
+obj = dict(name='小明', age=20)
+s = json.dumps(obj, ensure_ascii=True)  # 默认为True
 print(s)
 
 结果：{"name": "\u5c0f\u660e", "age": 20}
 ```
+unicode编码包含ascii编码 没有设置ensure_ascii = False的话就默认将汉字转为unicode编码

@@ -55,3 +55,14 @@ json_str = '{"name": "Bob", "age": 20, "score": 88}'
 print(json.loads(json_str, object_hook=dict2student))
 
 ```
+## 对中文进行Json序列化
+**json.dumps()** 提供了一个 **ensure_ascii** 参数
+```
+import json
+
+obj = dict(name='小明', age=20)
+s = json.dumps(obj, ensure_ascii=True)
+print(s)
+
+结果：{"name": "\u5c0f\u660e", "age": 20}
+```

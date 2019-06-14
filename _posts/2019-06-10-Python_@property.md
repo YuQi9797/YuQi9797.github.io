@@ -1,6 +1,6 @@
 ---
 layout: post  #这个不变
-title: "Python学习——使用@property" #标题
+title: "Python学习——使用@property——（摘写廖雪峰老师的笔记）" #标题
 date: 2019-06-10 16:52 #时间
 description: "Life is short,You need Python"  #说明
 tag: python #这是分类标签

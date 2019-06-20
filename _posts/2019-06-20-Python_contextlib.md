@@ -30,9 +30,9 @@ with open('/path/to/file', 'r') as f:
 ```
 **`with`** 语句的expression是 **上下文管理器**，**`with`** 语句中的[as variable]是可选的，如果指定了as variable说明符，则variable是上下文管理器expression调用__enter__()函数返回的对象。所以，f并不一定就是expression，而是express.__enter__()的返回值，至于express.__enter__()返回什么就由这个函数来局决定了。with-block是执行语句，with-block执行完毕时，with语句会自动进行资源清理，对应上面例子就是with语句会自动关闭文件。
 
-    下面我们来具体说下 **`with`** 语句在背后默默无闻地到底做了哪些事情。刚才我们说了 **expression** 是一个 **上下文管理器**，其实现了`__enter__`和`__exit__`两个函数。
+下面我们来具体说下 **`with`** 语句在背后默默无闻地到底做了哪些事情。刚才我们说了 **expression** 是一个 **上下文管理器**，其实现了`__enter__`和`__exit__`两个函数。
 
-    当我们调用一个 **`with`** 语句时，执行过程如下：
+当我们调用一个 **`with`** 语句时，执行过程如下：
 
     1.首先生成一个上下文管理器expression，在上面例子中with语句首先以“/path/to/file”作为参数生成一个上下文管理器open("/path/to/file")。
 
@@ -204,4 +204,4 @@ def closing(thing):
 ```
 它的作用就是把任意对象变为上下文对象，并支持`with`语句。
 
-``@contextlib`还有一些其他decorator，便于我们编写更简洁的代码。
+`@contextlib`还有一些其他decorator，便于我们编写更简洁的代码。

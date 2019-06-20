@@ -111,60 +111,58 @@ def DBConnection(object):
 　　上文提到如果我们要实现一个自定义的上下文管理器,需要定义一个实现了__enter__和__exit__两个方法的类, 这显示不是很方便。Python的contextlib模块给我们提供了更方便的方式来实现一个自定义的上下文管理器。contextlib模块包含一个装饰器contextmanager和一些辅助函数，装饰器contextmanager只需要写一个生成器函数就可以代替自定义的上下文管理器，典型用法如下：
 
 　　需要使用yield先定义一个生成器函数.
-  ```
-  @contextmanager
-  def some_generator(<arguments>):
-      <setup>
-      try:
-          yield <value>
-      finally:
-          <cleanup>
-  ```
-　　然后便可以用with语句调用contextmanage生成的上下文管理器了，with语句用法如下：
-　　```
-　　with some_generator(<arguments>) as <variable>:
-            <body>
-　　```
-　　生成器函数some_generator就和我们普通的函数一样，它的原理如下：
-　　　　1.some_generator函数在在yield之前的代码等同于上下文管理器中的__enter__函数。
-　　　　2.yield的返回值等同于__enter__函数的返回值，即如果with语句声明了as <variable>，则yield的值会赋给variable
-　　　　3.然后执行<cleanup>代码块，等同于上下文管理器的__exit__函数。此时发生的任何异常都会再次通过yield函数返回。
+```
+@contextmanager
+def some_generator(<arguments>):
+    <setup>
+    try:
+        yield <value>
+    finally:
+        <cleanup>
+```
+然后便可以用with语句调用contextmanage生成的上下文管理器了，with语句用法如下：
+```
+with some_generator(<arguments>) as <variable>:
+        <body>
+```
+生成器函数some_generator就和我们普通的函数一样，它的原理如下：
+　　1.some_generator函数在在yield之前的代码等同于上下文管理器中的__enter__函数。
+　　2.yield的返回值等同于__enter__函数的返回值，即如果with语句声明了as <variable>，则yield的值会赋给variable
+　　3.然后执行<cleanup>代码块，等同于上下文管理器的__exit__函数。此时发生的任何异常都会再次通过yield函数返回。
 
+例子1：文件打开后自动管理的实现
+```
+@contextmanager
+def myopen(filename, mode="r"):
+　　  f = open(filename,mode)
+　　  try:
+　　      yield f
+　　  finally:
+　　      f.close()
 
-　　例子1：文件打开后自动管理的实现
-　　```
-　　@contextmanager
-　　def myopen(filename, mode="r"):
-　　    f = open(filename,mode)
-　　    try:
-　　        yield f
-　　    finally:
-　　        f.close()
+with myopen("test.txt") as f:
+　　  for line in f:
+　　      print(line)
+```
+很多时候，我们希望在某段代码执行前后自动执行特定代码，也可以用@contextmanager实现。例如：
+```
+@contextmanager
+def tag(name):
+　　  print("<%s>" % name)
+　　  yield
+　　  print("</%s>" % name)
 
-　　with myopen("test.txt") as f:
-　　    for line in f:
-　　        print(line)
-　　```
-
-　　很多时候，我们希望在某段代码执行前后自动执行特定代码，也可以用@contextmanager实现。例如：
-　　```
-　　@contextmanager
-　　def tag(name):
-　　    print("<%s>" % name)
-　　    yield
-　　    print("</%s>" % name)
-
-　　with tag("h1"):
-　　    print("hello")
-　　    print("world")
-　　```
-　　结果：
-　　```
-　　<h1>
-　　hello
-　　world
-　　</h1>
-　　```
+with tag("h1"):
+　　  print("hello")
+　　  print("world")
+```
+结果：
+```
+<h1>
+hello
+world
+</h1>
+```
 代码的执行顺序是：
 
 1.`with`语句首先执行`yield`之前的语句，因此打印出``<h1>``；

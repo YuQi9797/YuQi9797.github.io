@@ -12,7 +12,8 @@ numpy.reshape(a, newshape, order='C')
 ```
 Gives a new shape to an array without changing its data.
 
-参数：
+##### 参数：
+
 **a：** 需要重塑的张量
 
 **newshape：** int or tuple of ints   (即int或者int的元组)。

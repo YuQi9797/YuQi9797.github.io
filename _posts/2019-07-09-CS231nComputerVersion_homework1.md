@@ -6,22 +6,22 @@ description: "Life is short,You need Python"  #说明
 tag: python #这是分类标签
 ---
 
-##Numpy的常用函数reshape
+## Numpy的常用函数reshape
 ```
 numpy.reshape(a, newshape, order='C')
 ```
 Gives a new shape to an array without changing its data.
 
 参数：
-**a**：需要重塑的张量
+**a：** 需要重塑的张量
 
-**newshape**：int or tuple of ints   (即int或者int的元组)。
+**newshape：** int or tuple of ints   (即int或者int的元组)。
 
 数组新的shape属性应该要与原来的配套，如果等于-1的话，那么Numpy会根据剩下的维度计算出数组的另外一个shape属性值
 
-**order**：{'C', 'F', 'A'}, optional   (即可选项，暂时不说这个)
+**order：**{'C', 'F', 'A'}, optional   (即可选项，暂时不说这个)
 
-####例子：
+#### 例子：
 有一个数组z，它的shape属性为(4, 4)
 ```
 >>> z = np.array([
@@ -56,7 +56,7 @@ array([[ 1,  2],
        [13, 14],
        [15, 16]])
 ```
-####CS231n计算机视觉homework1中：
+#### CS231n计算机视觉homework1中：
 ```
 num_training = 5000
 mask = list(range(num_training))
@@ -81,5 +81,5 @@ print(X_train.shape, X_test.shape)
 ```
 X_train = np.reshape(X_train, (X_train.shape[0], -1))
 ```
-即将 **X_train**进行张量变形，形状为 **(X_train.shape[0], -1)** 即(5000, -1)。
-也就是5000行，列不知道，根据剩下纬度进行计算，即 **32x32x3=3072**。所以最终形状为 **(5000,3072)**。
+即将**X_train**进行张量变形，形状为**(X_train.shape[0], -1)**即(5000, -1)。
+也就是5000行，列不知道，根据剩下纬度进行计算，即**32x32x3=3072**。所以最终形状为 **(5000,3072)**。

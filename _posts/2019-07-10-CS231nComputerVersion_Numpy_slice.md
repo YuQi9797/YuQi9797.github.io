@@ -6,7 +6,7 @@ description: "Life is short,You need Python"  #说明
 tag: python #这是分类标签
 ---
 
-## 在Numpy中操作张量
+## 在numpy中操作张量
 ```
 import numpy as np
 

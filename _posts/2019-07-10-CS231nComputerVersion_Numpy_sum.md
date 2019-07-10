@@ -6,7 +6,7 @@ description: "Life is short,You need Python"  #说明
 tag: python #这是分类标签
 ---
 
-## Numpy.sum()函数的使用
+## numpy.sum()函数的使用
 `sum(a, axis=None, dtype=None, out=None, keepdims=np._NoValue)`
 ##### 参数：
 

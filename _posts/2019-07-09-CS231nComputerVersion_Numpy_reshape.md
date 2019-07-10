@@ -1,6 +1,6 @@
 ---
 layout: post  #这个不变
-title: "CS231n计算机视觉-作业知识点（一）" #标题
+title: "CS231n计算机视觉-作业知识点（Numpy.reshape）" #标题
 date: 2019-07-09 21:43 #时间
 description: "Life is short,You need Python"  #说明
 tag: python #这是分类标签
@@ -69,7 +69,7 @@ mask = list(range(num_test))
 X_test = X_test[mask]
 y_test = y_test[mask]
 
-# Reshape the image data into rows
+# 将图像数据转置成二维的
 X_train = np.reshape(X_train, (X_train.shape[0], -1))
 X_test = np.reshape(X_test, (X_test.shape[0], -1))
 print(X_train.shape, X_test.shape)

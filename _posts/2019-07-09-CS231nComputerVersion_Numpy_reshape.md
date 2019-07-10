@@ -6,7 +6,7 @@ description: "Life is short,You need Python"  #说明
 tag: python #这是分类标签
 ---
 
-## Numpy的常用函数reshape
+## numpy的常用函数reshape
 ```
 numpy.reshape(a, newshape, order='C')
 ```

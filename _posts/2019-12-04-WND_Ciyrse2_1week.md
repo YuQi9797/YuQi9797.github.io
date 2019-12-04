@@ -1,7 +1,7 @@
 ---
 layout: post  #这个不变
-title: "吴恩达 Andrew Ng- 深度学习-Course 2 - 改善深层神经网络 - 第一周测验" #标题
-date: 2019-07-10 12:43 #时间
+title: "吴恩达-深度学习-Course2-改善深层神经网络-第一周测验" #标题
+date: 2019-12-04 09:43 #时间
 description: "Life is short,You need Python"  #说明
 tag: python #这是分类标签
 ---
